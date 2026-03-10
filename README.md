@@ -14,7 +14,8 @@ This site includes three fun, browser-based games:
 
 ```
 main/
-├── hmwk0.html           # Main portfolio page
+├── all the icon files   # Needed for web icon
+├── index.html           # Main portfolio page
 ├── game.html            # Number Guessing Game
 ├── hangman.html         # Hangman Game
 ├── wordScramble.html    # Word Scramble Game
@@ -37,11 +38,15 @@ main/
 
 Created by me when I was 13 years old!
 
-Contact me:
+## 📧 Contact me:
 - **Gmail:** [blue.dragon.888888888@gmail.com]
 - **Discord:** [blue_dragon_888](https://discord.com/users/blue_dragon_888)
 
-## 📝 License
+## 📜 Credits:
+- Favicon for the web icons
+- Teacher for asking me to do this as a project...
+- Myself form making it...?!
 
+## 📝 License
 
 NO LICENSE WHOA!
