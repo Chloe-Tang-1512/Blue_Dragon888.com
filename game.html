@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game - Blue_Dragon888</title>
+    <link rel="stylesheet" href="hmwk0.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+    <p>════════════════════════════════════════════════════════════════════════════════════════════════════</p>
+    <h1>Number Guessing Game 🔢</h1>
+    <p>════════════════════════════════════════════════════════════════════════════════════════════════════</p>
+    <p><i>It's 1 to 100 inclusive btw...</i></p>
+    <br>
+    
+    <div class="game-container">
+        <div id="gameDisplay" class="game-display"></div>
+        <div class="game-input">
+            <input type="number" id="guessInput" placeholder="Enter your guess..." min="1" max="100">
+            <button id="guessBtn" class="btn btn-primary">Guess</button>
+        </div>
+        <div class="game-stats">
+            <p>Attempts: <span id="attempts">0</span></p>
+            <p>High Score: <span id="highScore">∞</span></p>
+        </div>
+        <button id="newGameBtn" class="btn btn-secondary" style="display:none;">New Game</button>
+    </div>
+
+    <br>
+    <p><a href="index.html" class="back-link">← Back to Home</a></p>
+    <br>
+    
+    <script src="hmwk0.js"></script>
+</body>
+</html>

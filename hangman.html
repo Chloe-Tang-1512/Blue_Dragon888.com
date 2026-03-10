@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game - Blue_Dragon888</title>
+    <link rel="stylesheet" href="hmwk0.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+    <p>════════════════════════════════════════════════════════════════════════════════════════════════════</p>
+    <h1>Hangman Game 🎯</h1>
+    <p>════════════════════════════════════════════════════════════════════════════════════════════════════</p>
+    <p><i>You must have played this before right?!</i></p>
+    
+    <div class="game-container">
+        <div class="game-stats">
+            <p>Wins: <span id="wins">0</span></p>
+            <p>Lives: <span id="lives">6</span></p>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+
+        <div class="hangman-display">
+            <div class="hangman-drawing" id="hangman"></div>
+            <div id="word" class="word-display">_ _ _ _ _</div>
+        </div>
+
+        <div class="guessed-letters">
+            <p>Guessed: <span id="guessed"></span></p>
+        </div>
+
+        <div class="game-input">
+            <input type="text" id="letterInput" placeholder="Type a letter and press Enter..." maxlength="1" autocomplete="off">
+        </div>
+
+        <div id="feedback" class="game-feedback" style="display:none;"></div>
+
+        <div class="game-buttons">
+            <button id="newGameBtn" class="btn btn-primary">New Game</button>
+        </div>
+
+        <div id="gameOver" class="game-over" style="display:none;">
+            <h2 id="gameOverTitle">Game Over!</h2>
+            <p id="gameOverMessage"></p>
+            <p>The word was: <strong id="revealWord"></strong></p>
+            <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <p><a href="index.html" class="back-link">← Back to Home</a></p>
+    
+    <script src="hangman.js"></script>
+    <br>
+</body>
+</html>

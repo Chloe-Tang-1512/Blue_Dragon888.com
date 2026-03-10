@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble Game - Blue_Dragon888</title>
+    <link rel="stylesheet" href="hmwk0.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+<body>
+    <p>════════════════════════════════════════════════════════════════════════════════════════════════════</p>
+    <h1>Word Scramble Game 🔤</h1>
+    <p>════════════════════════════════════════════════════════════════════════════════════════════════════</p>
+    <p><i>Pretty much self-explanatory</i></p>
+    
+    <div class="game-container">
+        <div class="game-stats">
+            <p>Score: <span id="score">0</span></p>
+            <p>Level: <span id="level">1</span></p>
+        </div>
+
+        <div class="scramble-display">
+            <p id="scrambled" class="scrambled-word">LOADING...</p>
+            <p id="hint" class="hint"></p>
+        </div>
+
+        <div class="game-input">
+            <input type="text" id="answerInput" placeholder="Type your answer..." autocomplete="off">
+            <button id="submitBtn" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div id="feedback" class="game-feedback" style="display:none;"></div>
+
+        <div class="game-buttons">
+            <button id="skipBtn" class="btn btn-secondary">Skip</button>
+            <button id="nextBtn" class="btn btn-primary" style="display:none;">Next Word</button>
+        </div>
+
+        <div id="gameOver" class="game-over" style="display:none;">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <p><a href="index.html" class="back-link">← Back to Home</a></p>
+    
+    <script src="wordScramble.js"></script>
+    <br>
+</body>
+</html>
