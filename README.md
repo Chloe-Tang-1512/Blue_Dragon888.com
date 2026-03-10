@@ -23,7 +23,6 @@ main/
 ├── hmwk0.js             # Logic for Number Guessing Game
 ├── hangman.js           # Logic for Hangman Game
 ├── wordScramble.js      # Logic for Word Scramble Game
-├── site.webmanifest     # Web app manifest
 └── README.md            # This file
 ```
 
@@ -50,3 +49,4 @@ Created by me when I was 13 years old!
 ## 📝 License
 
 NO LICENSE WHOA!
+
