@@ -213,7 +213,7 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
-#letterInput, #guessInput, #answerInput {
+#letterInput, #guessInput, #answerInput, #wordInput {
     flex: 1;
     padding: 0.75rem;
     background-color: #0a0e27;
@@ -223,11 +223,11 @@ a:hover {
     font-size: 1rem;
 }
 
-#letterInput::placeholder, #guessInput::placeholder, #answerInput::placeholder {
+#letterInput::placeholder, #guessInput::placeholder, #answerInput::placeholder, #wordInput::placeholder {
     color: #666;
 }
 
-#letterInput:focus, #guessInput:focus, #answerInput:focus {
+#letterInput:focus, #guessInput:focus, #answerInput:focus, #wordInput:focus {
     outline: none;
 }
 
@@ -253,16 +253,6 @@ a:hover {
 .btn-primary:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-}
-
-.btn-secondary {
-    background-color: #555;
-    color: #fff;
-}
-
-.btn-secondary:hover {
-    background-color: #555;
-    color: #fff;
 }
 
 .game-buttons {
