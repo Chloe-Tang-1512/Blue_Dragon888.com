@@ -1,5 +1,5 @@
 const words = [
-    'PYTHON', 'ELEMENT', 'COMPUTER', 'DATABASE', 'ALGORITHM',
+    'PYTHON', 'GAMES', 'COMPUTER', 'DATABASE', 'ALGORITHM',
     'VARIABLE', 'FUNCTION', 'DEBUGGING', 'NETWORK', 'CODING',
     'PROGRAM', 'DEVELOPER', 'INTERFACE', 'SOFTWARE', 'HARDWARE',
     'KEYBOARD', 'MONITOR', 'MEMORY', 'PROCESSOR', 'STORAGE'
@@ -61,6 +61,36 @@ const guessLetter = (letter) => {
     checkGameStatus();
 };
 
+const guessWord = (guessedWord) => {
+    if (!gameActive) return;
+    
+    guessedWord = guessedWord.toUpperCase().trim();
+    
+    if (!guessedWord) return;
+    if (guessedWord.length === 1) return; // Single letter should use guessLetter
+
+    document.getElementById('feedback').style.display = 'block';
+
+    if (guessedWord === word) {
+        // Correct word guess - they win immediately!
+        guessed = word.split('');
+        document.getElementById('feedback').textContent = `🎉 You guessed the word correctly!`;
+        document.getElementById('feedback').className = 'game-feedback correct';
+        document.getElementById('word').textContent = word;
+        checkGameStatus();
+    } else {
+        // Wrong word guess - lose a life
+        lives--;
+        document.getElementById('feedback').textContent = `❌ That's not the word! You lose a life.`;
+        document.getElementById('feedback').className = 'game-feedback wrong';
+        document.getElementById('lives').textContent = lives;
+        document.getElementById('hangman').textContent = hangmanStages[6 - lives];
+        checkGameStatus();
+    }
+
+    document.getElementById('wordInput').value = '';
+};
+
 const checkGameStatus = () => {
     if (getDisplayWord().replace(/ /g, '') === word) {
         wins++;
@@ -77,6 +107,8 @@ const endGame = (won) => {
     gameActive = false;
     document.getElementById('gameOver').style.display = 'block';
     document.getElementById('letterInput').disabled = true;
+    document.getElementById('wordInput').disabled = true;
+    document.getElementById('guessWordBtn').disabled = true;
 
     if (won) {
         document.getElementById('gameOverTitle').textContent = '🎉 You Won!';
@@ -103,12 +135,25 @@ const newGame = () => {
     document.getElementById('letterInput').disabled = false;
     document.getElementById('letterInput').value = '';
     document.getElementById('letterInput').focus();
+    document.getElementById('wordInput').disabled = false;
+    document.getElementById('wordInput').value = '';
+    document.getElementById('guessWordBtn').disabled = false;
 };
 
 document.getElementById('letterInput').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         guessLetter(e.target.value);
     }
+});
+
+document.getElementById('wordInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        guessWord(e.target.value);
+    }
+});
+
+document.getElementById('guessWordBtn').addEventListener('click', () => {
+    guessWord(document.getElementById('wordInput').value);
 });
 
 document.getElementById('newGameBtn').addEventListener('click', newGame);
