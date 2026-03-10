@@ -37,11 +37,11 @@ main/
 
 Created by me when I was 13 years old!
 
-- **Email:** Chloe.Tang24@spgs.org
-- **GitHub:** [Chloe-Tang-1512](https://github.com/Chloe-Tang-1512)
-- **CodeForces:** [Chloe_Tang](https://codeforces.com/profile/Chloe_Tang)
+Contact me:
+- **Gmail:** [blue.dragon.888888888@gmail.com]
 - **Discord:** [blue_dragon_888](https://discord.com/users/blue_dragon_888)
 
 ## 📝 License
+
 
 NO LICENSE WHOA!
