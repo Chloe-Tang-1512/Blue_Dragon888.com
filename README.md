@@ -44,9 +44,10 @@ Created by me when I was 13 years old!
 ## 📜 Credits:
 - Favicon for the web icons
 - Teacher for asking me to do this as a project...
-- Myself form making it...?!
+- Myself for making it...?!
 
 ## 📝 License
 
 NO LICENSE WHOA!
+
 
