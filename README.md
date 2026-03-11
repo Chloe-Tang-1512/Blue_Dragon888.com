@@ -38,7 +38,7 @@ main/
 Created by me when I was 13 years old!
 
 ## 📧 Contact me:
-- **Gmail:** [blue.dragon.888888888@gmail.com]
+- **Gmail:** blue.dragon.888888888@gmail.com
 - **Discord:** [blue_dragon_888](https://discord.com/users/blue_dragon_888)
 
 ## 📜 Credits:
@@ -49,5 +49,6 @@ Created by me when I was 13 years old!
 ## 📝 License
 
 NO LICENSE WHOA!
+
 
 
