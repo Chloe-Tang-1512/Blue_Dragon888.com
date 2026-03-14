@@ -32,17 +32,20 @@ const loadWord = () => {
     }
     currentWord = words[level - 1];
     document.getElementById('scrambled').textContent = scrambleWord(currentWord.word);
-    document.getElementById('hint').textContent = `Hint: ${currentWord.hint}`;
+    document.getElementById('hint').textContent = '';  // hint hidden by default
     document.getElementById('answerInput').value = '';
+    document.getElementById('answerInput').disabled = false;
     document.getElementById('answerInput').focus();
     document.getElementById('feedback').style.display = 'none';
     document.getElementById('nextBtn').style.display = 'none';
     document.getElementById('submitBtn').style.display = 'inline-block';
+    document.getElementById('hintBtn').style.display = 'inline-block';
+    document.getElementById('hintBtn').disabled = false;
 };
 
 const submit = () => {
     const answer = document.getElementById('answerInput').value.toUpperCase().trim();
-    
+
     if (!answer) {
         document.getElementById('feedback').style.display = 'block';
         document.getElementById('feedback').textContent = '❌ Please enter a word!';
@@ -57,6 +60,7 @@ const submit = () => {
         document.getElementById('feedback').textContent = '✅ Correct!';
         document.getElementById('feedback').className = 'game-feedback correct';
         document.getElementById('submitBtn').style.display = 'none';
+        document.getElementById('hintBtn').style.display = 'none';
         document.getElementById('nextBtn').style.display = 'inline-block';
         document.getElementById('answerInput').disabled = true;
     } else {
@@ -66,13 +70,9 @@ const submit = () => {
     }
 };
 
-const skip = () => {
-    document.getElementById('feedback').style.display = 'block';
-    document.getElementById('feedback').textContent = `The answer was: ${currentWord.word}`;
-    document.getElementById('feedback').className = 'game-feedback';
-    document.getElementById('submitBtn').style.display = 'none';
-    document.getElementById('nextBtn').style.display = 'inline-block';
-    document.getElementById('answerInput').disabled = true;
+const showHint = () => {
+    document.getElementById('hint').textContent = `Hint: ${currentWord.hint}`;
+    document.getElementById('hintBtn').disabled = true;
 };
 
 const nextWord = () => {
@@ -86,7 +86,7 @@ const endGame = () => {
     gameActive = false;
     document.getElementById('scramble-display').style.display = 'none';
     document.getElementById('game-input').style.display = 'none';
-    document.getElementById('skipBtn').style.display = 'none';
+    document.getElementById('hintBtn').style.display = 'none';
     document.getElementById('nextBtn').style.display = 'none';
     document.getElementById('submitBtn').style.display = 'none';
     document.getElementById('gameOver').style.display = 'block';
@@ -97,7 +97,7 @@ document.getElementById('submitBtn').addEventListener('click', submit);
 document.getElementById('answerInput').addEventListener('keypress', e => {
     if (e.key === 'Enter') submit();
 });
-document.getElementById('skipBtn').addEventListener('click', skip);
+document.getElementById('hintBtn').addEventListener('click', showHint);
 document.getElementById('nextBtn').addEventListener('click', nextWord);
 document.getElementById('playAgainBtn').addEventListener('click', () => {
     score = 0;
