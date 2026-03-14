@@ -16,6 +16,8 @@ const words = [
     { word: 'SYNTAX', hint: 'Rules of a language' }
 ];
 
+const shuffledWords = [...words].sort(() => Math.random() - 0.5);
+
 let score = 0;
 let level = 1;
 let currentWord;
@@ -26,13 +28,13 @@ const scrambleWord = (word) => {
 };
 
 const loadWord = () => {
-    if (level > words.length) {
+    if (level > shuffledWords.length) {
         endGame();
         return;
     }
-    currentWord = words[level - 1];
+    currentWord = shuffledWords[level - 1];
     document.getElementById('scrambled').textContent = scrambleWord(currentWord.word);
-    document.getElementById('hint').textContent = '';  // hint hidden by default
+    document.getElementById('hint').textContent = '';
     document.getElementById('answerInput').value = '';
     document.getElementById('answerInput').disabled = false;
     document.getElementById('answerInput').focus();
@@ -103,6 +105,7 @@ document.getElementById('playAgainBtn').addEventListener('click', () => {
     score = 0;
     level = 1;
     gameActive = true;
+    shuffledWords.sort(() => Math.random() - 0.5);
     document.getElementById('score').textContent = '0';
     document.getElementById('level').textContent = '1';
     document.getElementById('gameOver').style.display = 'none';
